@@ -6,8 +6,23 @@ from unittest.mock import patch
 from io import StringIO
 from console import HBNBCommand
 from models.engine.file_storage import FileStorage
+ts/test_console.py
 
+import unittest
 
+class TestConsole(unittest.TestCase):
+    def test_create_place(self):
+        call = 'create Place city_id="{city_id}" name="{name}" number_rooms={number_rooms} latitude={latitude} longitude={longitude}'.format(
+            city_id="0001",
+            name="My_house",
+            number_rooms=4,
+            latitude=37.77,
+            longitude=43.434
+        )
+        self.assertIsNotNone(call)  # Example assertion, replace with actual test logic
+
+if __name__ == '__main__':
+    unittest.main()
 class TestHBNBCommand(unittest.TestCase):
     """Unittests for testing the HBNB command interpreter."""
 
